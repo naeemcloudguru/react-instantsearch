@@ -1,6 +1,7 @@
 {
   "name": "acloudguru-react-instasearch",
-  "version": "6.10.7",
+  "version": "6.10.8",
+  "private": true,
   "license": "MIT",
   "workspaces": [
     "packages/*",
@@ -157,12 +158,6 @@
       "path": "packages/react-instantsearch-dom-maps/dist/umd/ReactInstantSearchDOMMaps.min.js",
       "maxSize": "6 kB"
     }
-  ],
-  "dependencies": {
-    "@babel/runtime": "^7.13.9",
-    "algoliasearch-helper": "^3.4.4",
-    "classnames": "^2.2.6",
-    "react-fast-compare": "^3.2.0",
-    "react-instantsearch-core": "^6.10.3"
-  }
+  ]
+ 
 }
