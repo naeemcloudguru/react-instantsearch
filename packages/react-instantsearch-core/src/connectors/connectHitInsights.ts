@@ -55,6 +55,10 @@ See: https://alg.li/VpPpLt`);
   }
 }
 
+interface GlobalWindow extends Window {
+  aa: Function;
+}
+
 const wrapInsightsClient = (
   aa: InsightsClient,
   results: Results,
@@ -63,7 +67,10 @@ const wrapInsightsClient = (
   method: InsightsClientMethod,
   payload: Partial<InsightsClientPayload>
 ) => {
-  if (typeof aa !== 'function') {
+  if (
+    typeof aa !== 'function' &&
+    typeof ((window as unknown) as GlobalWindow).aa !== 'function'
+  ) {
     throw new TypeError(`Expected insightsClient to be a Function`);
   }
   const inferredPayload = inferPayload({ method, results, currentHit });
